@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+tsname=$(echo $1 | sed 's/\(.*\)\.js/\1.ts/g')
+mv $1 $tsname

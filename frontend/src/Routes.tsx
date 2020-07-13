@@ -29,7 +29,6 @@ const Routes = () => {
       />
       <RouteWithLayout
         component={UserListView}
-        exact
         layout={MainLayout}
         path="/users"
       />

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import { makeStyles } from '@material-ui/styles';
+import React, { useState } from "react";
+import clsx from "clsx";
+import PropTypes from "prop-types";
+import moment from "moment";
+import PerfectScrollbar from "react-perfect-scrollbar";
+import { makeStyles } from "@material-ui/styles";
 import {
   Card,
   CardActions,
@@ -16,32 +16,32 @@ import {
   TableHead,
   TableRow,
   Typography,
-  TablePagination
-} from '@material-ui/core';
+  TablePagination,
+} from "@material-ui/core";
 
-import { getInitials } from 'helpers';
+import { getInitials } from "../../../../helpers";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {},
   content: {
-    padding: 0
+    padding: 0,
   },
   inner: {
-    minWidth: 1050
+    minWidth: 1050,
   },
   nameContainer: {
-    display: 'flex',
-    alignItems: 'center'
+    display: "flex",
+    alignItems: "center",
   },
   avatar: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   actions: {
-    justifyContent: 'flex-end'
-  }
+    justifyContent: "flex-end",
+  },
 }));
 
-const UsersTable = props => {
+const UsersTable = (props) => {
   const { className, users, ...rest } = props;
 
   const classes = useStyles();
@@ -50,13 +50,13 @@ const UsersTable = props => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(0);
 
-  const handleSelectAll = event => {
+  const handleSelectAll = (event) => {
     const { users } = props;
 
     let selectedUsers;
 
     if (event.target.checked) {
-      selectedUsers = users.map(user => user.id);
+      selectedUsers = users.map((user) => user.id);
     } else {
       selectedUsers = [];
     }
@@ -88,15 +88,12 @@ const UsersTable = props => {
     setPage(page);
   };
 
-  const handleRowsPerPageChange = event => {
+  const handleRowsPerPageChange = (event) => {
     setRowsPerPage(event.target.value);
   };
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <Card {...rest} className={clsx(classes.root, className)}>
       <CardContent className={classes.content}>
         <PerfectScrollbar>
           <div className={classes.inner}>
@@ -122,7 +119,7 @@ const UsersTable = props => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {users.slice(0, rowsPerPage).map(user => (
+                {users.slice(0, rowsPerPage).map((user) => (
                   <TableRow
                     className={classes.tableRow}
                     hover
@@ -133,16 +130,13 @@ const UsersTable = props => {
                       <Checkbox
                         checked={selectedUsers.indexOf(user.id) !== -1}
                         color="primary"
-                        onChange={event => handleSelectOne(event, user.id)}
+                        onChange={(event) => handleSelectOne(event, user.id)}
                         value="true"
                       />
                     </TableCell>
                     <TableCell>
                       <div className={classes.nameContainer}>
-                        <Avatar
-                          className={classes.avatar}
-                          src={user.avatarUrl}
-                        >
+                        <Avatar className={classes.avatar} src={user.avatarUrl}>
                           {getInitials(user.name)}
                         </Avatar>
                         <Typography variant="body1">{user.name}</Typography>
@@ -150,12 +144,12 @@ const UsersTable = props => {
                     </TableCell>
                     <TableCell>{user.email}</TableCell>
                     <TableCell>
-                      {user.address.city}, {user.address.state},{' '}
+                      {user.address.city}, {user.address.state},{" "}
                       {user.address.country}
                     </TableCell>
                     <TableCell>{user.phone}</TableCell>
                     <TableCell>
-                      {moment(user.createdAt).format('DD/MM/YYYY')}
+                      {moment(user.createdAt).format("DD/MM/YYYY")}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -181,7 +175,7 @@ const UsersTable = props => {
 
 UsersTable.propTypes = {
   className: PropTypes.string,
-  users: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired,
 };
 
 export default UsersTable;
