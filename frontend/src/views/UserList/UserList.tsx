@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/styles';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/styles";
 
-import { UsersToolbar, UsersTable } from './components';
-import mockData from './data';
+import { UsersToolbar, UsersTable } from "./components";
+import mockData from "./data";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(3)
+    padding: theme.spacing(3),
   },
   content: {
-    marginTop: theme.spacing(2)
-  }
+    marginTop: theme.spacing(2),
+  },
 }));
 
 const UserList = () => {
