@@ -22,51 +22,61 @@ const Routes = () => {
     <Switch>
       <Redirect exact from="/" to="/dashboard" />
       <RouteWithLayout
+        exact
         component={DashboardView}
         layout={MainLayout}
         path="/dashboard"
       />
       <RouteWithLayout
+        exact
         component={UserListView}
         layout={MainLayout}
         path="/users"
       />
       <RouteWithLayout
+        exact
         component={ProductListView}
         layout={MainLayout}
         path="/products"
       />
       <RouteWithLayout
+        exact
         component={TypographyView}
         layout={MainLayout}
         path="/typography"
       />
       <RouteWithLayout
+        exact
         component={IconsView}
         layout={MainLayout}
         path="/icons"
       />
       <RouteWithLayout
+        exact
         component={AccountView}
         layout={MainLayout}
         path="/account"
       />
       <RouteWithLayout
+        exact
         component={SettingsView}
         layout={MainLayout}
         path="/settings"
       />
       <RouteWithLayout
+        exact
         component={SignUpView}
         layout={MinimalLayout}
         path="/sign-up"
       />
       <RouteWithLayout
+        exact
         component={SignInView}
         layout={MinimalLayout}
         path="/sign-in"
       />
       <RouteWithLayout
+        exact
         component={NotFoundView}
         layout={MinimalLayout}
         path="/not-found"

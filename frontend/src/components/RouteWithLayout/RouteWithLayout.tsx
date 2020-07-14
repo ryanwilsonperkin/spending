@@ -1,8 +1,12 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, RouteProps } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const RouteWithLayout = (props) => {
+interface RouteWithLayoutProps extends RouteProps {
+  layout: any;
+}
+
+const RouteWithLayout = (props: RouteWithLayoutProps) => {
   const { layout: Layout, component: Component, ...rest } = props;
 
   return (
