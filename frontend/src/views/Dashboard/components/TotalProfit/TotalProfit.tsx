@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
   },
   avatar: {
-    backgroundColor: theme.palette.white,
+    backgroundColor: theme.palette.background.paper,
     color: theme.palette.primary.main,
     height: 56,
     width: 56,

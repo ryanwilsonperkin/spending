@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Input } from "@material-ui/core";
+import { Paper, Input, PaperProps, InputProps } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +25,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SearchInput = (props) => {
+type SearchInputProps = PaperProps &
+  InputProps & {
+    className?: string;
+    style?: React.CSSProperties;
+  };
+
+const SearchInput = (props: SearchInputProps) => {
   const { className, onChange, style, ...rest } = props;
 
   const classes = useStyles();

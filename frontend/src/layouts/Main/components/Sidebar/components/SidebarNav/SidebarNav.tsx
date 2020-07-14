@@ -1,6 +1,6 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/display-name */
-import React, { forwardRef } from "react";
+import React from "react";
 import { NavLink as RouterLink } from "react-router-dom";
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -40,12 +40,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomRouterLink = forwardRef((props, ref) => (
-  <div ref={ref} style={{ flexGrow: 1 }}>
-    <RouterLink {...props} />
-  </div>
-));
-
 const SidebarNav = (props) => {
   const { pages, className, ...rest } = props;
 
@@ -58,7 +52,7 @@ const SidebarNav = (props) => {
           <Button
             activeClassName={classes.active}
             className={classes.button}
-            component={CustomRouterLink}
+            component={RouterLink}
             to={page.href}
           >
             <div className={classes.icon}>{page.icon}</div>

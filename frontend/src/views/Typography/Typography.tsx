@@ -38,7 +38,9 @@ const Typography = () => {
               <MuiTypography variant="caption">{key}</MuiTypography>
             </Grid>
             <Grid item sm={9} xs={12}>
-              <MuiTypography variant={key}>{variants[key]}</MuiTypography>
+              <MuiTypography variant={key as any}>
+                {variants[key]}
+              </MuiTypography>
             </Grid>
           </Fragment>
         ))}

@@ -60,15 +60,15 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: "600px",
   },
   quoteText: {
-    color: theme.palette.white,
+    color: theme.palette.background.paper,
     fontWeight: 300,
   },
   name: {
     marginTop: theme.spacing(3),
-    color: theme.palette.white,
+    color: theme.palette.background.paper,
   },
   bio: {
-    color: theme.palette.white,
+    color: theme.palette.background.paper,
   },
   contentContainer: {},
   content: {
@@ -125,12 +125,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+interface FormState {
+  isValid: boolean;
+  values: {
+    email?: string;
+    password?: string;
+  };
+  errors: {
+    email?: string[];
+    password?: string[];
+  };
+  touched: {
+    email?: boolean;
+    password?: boolean;
+  };
+}
+
 const SignIn = (props) => {
   const { history } = props;
 
   const classes = useStyles();
 
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormState>({
     isValid: false,
     values: {},
     touched: {},
@@ -188,7 +204,7 @@ const SignIn = (props) => {
                 Hella narwhal Cosby sweater McSweeney's, salvia kitsch before
                 they sold out High Life.
               </Typography>
-              <div className={classes.person}>
+              <div>
                 <Typography className={classes.name} variant="body1">
                   Takamaru Ayako
                 </Typography>

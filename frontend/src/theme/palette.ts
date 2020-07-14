@@ -1,10 +1,11 @@
 import { colors } from "@material-ui/core";
-import { PaletteOptions } from "@material-ui/core/styles/createPalette";
 
 const white = "#FFFFFF";
 const black = "#000000";
 
-const palette: PaletteOptions = {
+export default {
+  white,
+  black,
   primary: {
     contrastText: white,
     dark: colors.indigo[900],
@@ -51,5 +52,3 @@ const palette: PaletteOptions = {
   },
   divider: colors.grey[200],
 };
-
-export default palette;

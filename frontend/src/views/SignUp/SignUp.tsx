@@ -76,15 +76,15 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: "600px",
   },
   quoteText: {
-    color: theme.palette.white,
+    color: theme.palette.background.paper,
     fontWeight: 300,
   },
   name: {
     marginTop: theme.spacing(3),
-    color: theme.palette.white,
+    color: theme.palette.background.paper,
   },
   bio: {
-    color: theme.palette.white,
+    color: theme.palette.background.paper,
   },
   contentContainer: {},
   content: {
@@ -140,12 +140,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+interface FormState {
+  isValid: boolean;
+  values: any;
+  touched: any;
+  errors: any;
+}
+
 const SignUp = (props) => {
   const { history } = props;
 
   const classes = useStyles();
 
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormState>({
     isValid: false,
     values: {},
     touched: {},
@@ -203,7 +210,7 @@ const SignUp = (props) => {
                 Hella narwhal Cosby sweater McSweeney's, salvia kitsch before
                 they sold out High Life.
               </Typography>
-              <div className={classes.person}>
+              <div>
                 <Typography className={classes.name} variant="body1">
                   Takamaru Ayako
                 </Typography>
@@ -293,11 +300,7 @@ const SignUp = (props) => {
                     name="policy"
                     onChange={handleChange}
                   />
-                  <Typography
-                    className={classes.policyText}
-                    color="textSecondary"
-                    variant="body1"
-                  >
+                  <Typography color="textSecondary" variant="body1">
                     I have read the{" "}
                     <Link
                       color="primary"

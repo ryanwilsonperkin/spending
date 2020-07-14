@@ -71,9 +71,7 @@ const Budget = (props) => {
           <Typography className={classes.differenceValue} variant="body2">
             12%
           </Typography>
-          <Typography className={classes.caption} variant="caption">
-            Since last month
-          </Typography>
+          <Typography variant="caption">Since last month</Typography>
         </div>
       </CardContent>
     </Card>
