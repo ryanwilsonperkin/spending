@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
   },
   deviceIcon: {
-    color: theme.palette.icon,
+    color: theme.palette.text.secondary,
   },
 }));
 

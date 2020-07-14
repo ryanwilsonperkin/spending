@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   statsIcon: {
-    color: theme.palette.icon,
+    color: theme.palette.text.secondary,
     marginRight: theme.spacing(1),
   },
 }));
