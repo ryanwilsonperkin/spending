@@ -40,6 +40,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const CustomRouterLink = React.forwardRef((props: any, ref: any) => (
+  <div ref={ref} style={{ flexGrow: 1 }}>
+    <RouterLink {...props} />
+  </div>
+));
+
 const SidebarNav = (props) => {
   const { pages, className, ...rest } = props;
 
@@ -52,7 +58,7 @@ const SidebarNav = (props) => {
           <Button
             activeClassName={classes.active}
             className={classes.button}
-            component={RouterLink}
+            component={CustomRouterLink}
             to={page.href}
           >
             <div className={classes.icon}>{page.icon}</div>
