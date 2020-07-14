@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
   lg: {
     height: theme.spacing(3),
     width: theme.spacing(3),
-  },
-  neutral: {
-    backgroundColor: theme.palette.neutral,
   },
   primary: {
     backgroundColor: theme.palette.primary.main,
@@ -64,14 +61,7 @@ const StatusBullet = (props) => {
 
 StatusBullet.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.oneOf([
-    "neutral",
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-  ]),
+  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
   size: PropTypes.oneOf(["sm", "md", "lg"]),
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link as RouterLink, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import validate from "validate.js";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import {
   Grid,
   Button,
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   quote: {
-    backgroundColor: theme.palette.neutral,
+    backgroundColor: theme.palette.secondary.main,
     height: "100%",
     display: "flex",
     justifyContent: "center",
